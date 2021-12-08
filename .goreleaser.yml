@@ -34,7 +34,7 @@ builds:
     env:
       - CGO_ENABLED=1
     goos:
-      - linux
+      # - linux
       - windows
       - darwin
     
