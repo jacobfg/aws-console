@@ -60,7 +60,7 @@ func getConsoleSigninUrl(duration int) (string, error) {
 	// log := log.With().Str("profile", c.Name).Logger()
 	client := http.Client{}
 
-	fmt.Println(expandPath("$HOME", ".aws", "credentials"))
+	// fmt.Println(expandPath("$HOME", ".aws", "credentials"))
 	creds := credentials.NewSharedCredentials(expandPath("$HOME", ".aws", "credentials"), getEnv("AWS_PROFILE", "default"))
 	// creds := credentials.NewEnvCredentials()
 
@@ -82,7 +82,7 @@ func getConsoleSigninUrl(duration int) (string, error) {
 		// log.Debug().Err(err).Msg("Error marshalling credentials into JSON object")
 		return "", errors.New("error marshalling credentials into JSON object")
 	}
-	fmt.Print(string(jdata))
+	// fmt.Print(string(jdata))
 
 	req, err := http.NewRequest("GET", "https://signin.aws.amazon.com/federation", nil)
 	if err != nil {
